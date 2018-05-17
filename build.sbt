@@ -2,15 +2,15 @@ name := "scala-cucumber-convenience"
 
 organization := "com.schmueckers"
 
-version := "0.1.0"
+version := "0.1.1"
 
 scalaVersion := "2.11.12"
 
 scalaVersion in ThisBuild := "2.11.12"
 
-//libraryDependencies += "org.scalactic" %% "scalactic" % "3.0.4"
+libraryDependencies += "org.scalactic" %% "scalactic" % "3.0.4"
 
-//libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.4"
+libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.4"
 
 libraryDependencies += "io.cucumber" %% "cucumber-scala" % "2.0.1"
 
