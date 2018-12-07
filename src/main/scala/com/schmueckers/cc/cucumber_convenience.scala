@@ -50,4 +50,16 @@ trait cucumber_convenience {
     val mutableListMap = dataTable.asMaps(classOf[String], classOf[String]).asScala.map(_.asScala)
     List(mutableListMap: _*).map((mm: mutable.Map[String, String]) => Map[String, String](mm.toSeq: _*))
   }
+
+  /**
+    * Class to extend the Cucumber DataTable with some Scala scentric functionality
+    *
+    * @param dt The DataTable we want to handle in Scala
+    */
+  implicit class CucumberDataTableExtensions(dt: DataTable) {
+    def asScalaMaps: List[Map[String, String]] = dataTableToScalaMaps(dt)
+
+    def asScalaList: List[String] = List(dt.asList(classOf[String]).asScala: _*)
+  }
+
 }
