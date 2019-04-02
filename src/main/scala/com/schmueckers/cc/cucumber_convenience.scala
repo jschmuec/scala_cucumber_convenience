@@ -1,8 +1,11 @@
 package com.schmueckers.cc
 
+import java.util
+
+import io.cucumber.datatable.DataTable
+
 import scala.collection.JavaConverters._
 import scala.collection.mutable
-import cucumber.api.DataTable
 
 trait cucumber_convenience {
   val n = """((?:\d*\.)?\d+)""" // capture a number
@@ -47,8 +50,13 @@ trait cucumber_convenience {
     s""" $r_mw"""
 
   def dataTableToScalaMaps(dataTable: DataTable): List[Map[String, String]] = {
-    val mutableListMap = dataTable.asMaps(classOf[String], classOf[String]).asScala.map(_.asScala)
-    List(mutableListMap: _*).map((mm: mutable.Map[String, String]) => Map[String, String](mm.toSeq: _*))
+    val asMaps: util.List[util.Map[String, String]] = dataTable.asMaps
+
+    val asScalaMaps = List( asMaps.asScala : _* )
+
+    def toUnmutableMap( mm : util.Map[String,String] ) = Map( mm.asScala.toList :_*  )
+
+    asScalaMaps.map( toUnmutableMap )
   }
 
   /**
