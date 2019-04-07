@@ -1,6 +1,8 @@
 Scala-Cucumber-Convenience
 ===
 
+I'm trying this now and it appears not to work anymore. This might be a result of versions.
+
 This is a package that packages various things that make working iwth Cucumber in Scala more convenient. To add this package add the following line to your `build.sbt`.
 
 ```Scala
