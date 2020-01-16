@@ -6,15 +6,15 @@ I'm trying this now and it appears not to work anymore. This might be a result o
 This is a package that packages various things that make working iwth Cucumber in Scala more convenient. To add this package add the following line to your `build.sbt`.
 
 ```Scala
-libraryDependencies += "com.schmueckers" %% "scala-cucumber-convenience" % "0.1.0" % Test
+libraryDependencies += "com.schmueckers" %% "scala-cucumber-convenience" % "0.1.4" % Test
 ```
 
 This will automatically import all the dependencies you need to use Cucumber in Scala. Essentially, you are creating the following dependencies:
 
 ```Scala
-libraryDependencies += "io.cucumber" %% "cucumber-scala" % "2.0.1"
+libraryDependencies += "io.cucumber" %% "cucumber-scala" % "4.2.6"
 
-libraryDependencies += "io.cucumber" % "cucumber-junit" % "2.3.1"
+libraryDependencies += "io.cucumber" % "cucumber-junit" % "4.2.6"
 ```
 
 You are also getting a trait called ```cucumber_convenience``` which contains a number of regular 
